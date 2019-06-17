@@ -2,5 +2,11 @@
   "name": "ethereum-message-sandbox",
   "version": "1.0.0",
   "private": true,
-  "workspaces": ["frontend"]
+  "workspaces": ["frontend"],
+  "scripts": {
+    "dev": "yarn dev:frontend",
+    "dev:frontend": "yarn workspace frontend dev",
+    "lint": "yarn lint:frontend",
+    "lint:frontend": "yarn workspace frontend lint"
+  }
 }
