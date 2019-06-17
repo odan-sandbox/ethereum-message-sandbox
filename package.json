@@ -1,5 +1,6 @@
 {
   "name": "ethereum-message-sandbox",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "workspaces": ["frontend"]
 }
