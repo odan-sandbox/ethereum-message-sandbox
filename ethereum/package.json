@@ -1,0 +1,28 @@
+{
+  "name": "ethereum",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.8",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "ganache-cli": "^6.4.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "truffle": "^5.0.22",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  },
+  "scripts": {
+    "build": "truffle build",
+    "deploy": "truffle migration",
+    "launch": "ganache-cli",
+    "test": "ts-node test.ts",
+    "test:sol": "truffle test --network test",
+    "lint": "eslint --ext .ts,.js --ignore-path .gitignore ."
+  }
+}
