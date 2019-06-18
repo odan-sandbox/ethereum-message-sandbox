@@ -65,6 +65,9 @@ export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  mounted() {
+    window.ethereum.enable()
   }
 }
 </script>

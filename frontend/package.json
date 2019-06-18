@@ -15,12 +15,14 @@
   "dependencies": {
     "@nuxtjs/vuetify": "0.5.5",
     "nuxt": "^2.0.0",
-    "ts-node": "^8.3.0"
+    "ts-node": "^8.3.0",
+    "web3": "1.0.0-beta.37"
   },
   "devDependencies": {
     "@nuxt/typescript": "^2.8.1",
     "@nuxtjs/eslint-config": "^0.0.1",
     "@nuxtjs/eslint-module": "^0.0.1",
+    "@types/web3": "^1.0.18",
     "@typescript-eslint/eslint-plugin": "^1.10.2",
     "@typescript-eslint/parser": "^1.10.2",
     "babel-eslint": "^10.0.1",
