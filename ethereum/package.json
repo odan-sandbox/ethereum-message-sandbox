@@ -19,9 +19,10 @@
   },
   "scripts": {
     "build": "truffle build",
-    "deploy": "truffle migration",
-    "launch": "ganache-cli",
-    "test": "ts-node test.ts",
+    "deploy": "truffle migration --network test",
+    "launch": "ganache-cli --gasLimit 8000000 --port 6545",
+    "dev": "ts-node scripts/dev.ts",
+    "test": "ts-node scripts/test.ts",
     "test:sol": "truffle test --network test",
     "lint": "eslint --ext .ts,.js --ignore-path .gitignore ."
   }

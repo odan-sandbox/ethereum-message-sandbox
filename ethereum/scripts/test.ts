@@ -1,11 +1,6 @@
 import childProcess from "child_process";
 
-const ganache = childProcess.spawn("ganache-cli", [
-  "--gasLimit",
-  "8000000",
-  "--port",
-  "6545"
-]);
+const ganache = childProcess.spawn("yarn", ["launch"]);
 
 const test = childProcess.spawn("yarn", ["test:sol"]);
 test.stdout.pipe(process.stdout);
