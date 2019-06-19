@@ -5,7 +5,7 @@ declare global {
       currentProvider: any
     }
     ethereum: {
-      enable(): Promise<string>
+      enable(): Promise<string[]>
     }
   }
 }

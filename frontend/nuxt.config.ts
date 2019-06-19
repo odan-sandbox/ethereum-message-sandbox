@@ -1,5 +1,5 @@
 import NuxtConfiguration from '@nuxt/config'
-import colors from 'vuetify/es5/util/colors'
+const colors = require('vuetify/es5/util/colors').default
 
 const config: NuxtConfiguration = {
   mode: 'universal',

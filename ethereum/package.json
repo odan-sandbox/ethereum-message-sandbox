@@ -20,7 +20,7 @@
   "scripts": {
     "build": "truffle build",
     "deploy": "truffle migration --network test",
-    "launch": "ganache-cli --gasLimit 8000000 --port 6545",
+    "launch": "ganache-cli --gasLimit 8000000 --port 6545 --seed 42",
     "dev": "ts-node scripts/dev.ts",
     "test": "ts-node scripts/test.ts",
     "test:sol": "truffle test --network test",
