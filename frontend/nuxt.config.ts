@@ -17,6 +17,9 @@ const config: NuxtConfiguration = {
   env: {
     ...getEnv()
   },
+  router: {
+    base: '/ethereum-message-sandbox/'
+  },
   /*
    ** Headers of the page
    */
