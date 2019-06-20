@@ -1,8 +1,22 @@
 import NuxtConfiguration from '@nuxt/config'
+
 const colors = require('vuetify/es5/util/colors').default
+
+function getEnv() {
+  if (!process.env.MESSAGE_CONTRACT_ADDRESS) {
+    throw new Error('MESSAGE_CONTRACT_ADDRESS is undefined')
+  }
+  const env = {
+    MESSAGE_CONTRACT_ADDRESS: process.env.MESSAGE_CONTRACT_ADDRESS
+  }
+  return env
+}
 
 const config: NuxtConfiguration = {
   mode: 'universal',
+  env: {
+    ...getEnv()
+  },
   /*
    ** Headers of the page
    */

@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "precommit": "yarn run lint",
-    "dev": "nuxt",
+    "dev": "MESSAGE_CONTRACT_ADDRESS=0x9e64cacf399d28a6f8ef2bed53dd012e01e6d903 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"

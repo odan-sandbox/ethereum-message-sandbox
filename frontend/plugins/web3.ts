@@ -8,7 +8,7 @@ export default (_: Context, inject: Inject) => {
   inject('web3', web3)
 
   // seed = 42
-  const contractAddress = '0x9e64cacf399d28a6f8ef2bed53dd012e01e6d903'
+  const contractAddress = process.env.MESSAGE_CONTRACT_ADDRESS
   const message = new web3.eth.Contract(messageJson.abi, contractAddress)
   inject('contracts', { message })
 }

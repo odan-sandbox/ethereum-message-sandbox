@@ -16,8 +16,8 @@
           Message
         </v-card-title>
         <v-card-text>
-          {{ message }}
-          {{ address }}
+          <span>address:</span><span> {{ address }} </span><br />
+          <span>message:</span><span> {{ message }} </span><br />
         </v-card-text>
       </v-card>
     </v-flex>
