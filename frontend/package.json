@@ -10,7 +10,7 @@
     "dev": "MESSAGE_CONTRACT_ADDRESS=0x9e64cacf399d28a6f8ef2bed53dd012e01e6d903 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate:ropsten": "MESSAGE_CONTRACT_ADDRESS=0x8aD1d8051115E593b98EE2c86dA472DbAed14fF2 nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/vuetify": "0.5.5",

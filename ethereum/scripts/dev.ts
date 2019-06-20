@@ -8,10 +8,7 @@ async function start() {
   ganache.stderr.pipe(process.stderr);
 
   await sleep(3000)
-
-  const deploy = childProcess.spawn("yarn", ["deploy"]);
-  // deploy.stdout.pipe(process.stdout);
-  // deploy.stderr.pipe(process.stderr);
+  childProcess.spawn("yarn", ["deploy:test"]);
 }
 
 start()
