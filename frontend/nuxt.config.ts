@@ -76,7 +76,7 @@ const config: NuxtConfiguration = {
     }
   },
   build: {
-    quiet: true
+    quiet: false
   }
 }
 
