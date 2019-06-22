@@ -18,6 +18,9 @@ jobs:
           dir: ~/.cache/yarn
           cache-key: yarn.lock
       - run:
+          name: Build contract
+          command: yarn workspace ethereum build
+      - run:
           name: Build site
           command: yarn workspace frontend generate:ropsten
       - persist_to_workspace:
