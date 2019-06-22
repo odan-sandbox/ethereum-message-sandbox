@@ -74,6 +74,9 @@ const config: NuxtConfiguration = {
       error: colors.deepOrange.accent4,
       success: colors.green.accent3
     }
+  },
+  build: {
+    quiet: true
   }
 }
 
