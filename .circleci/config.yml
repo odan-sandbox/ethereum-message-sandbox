@@ -24,6 +24,7 @@ jobs:
           root: .
           paths:
               - ./frontend/dist
+              - ./bin
   deploy:
     machine: true
     steps:
@@ -33,27 +34,15 @@ jobs:
           fingerprints:
             - "b5:9a:5e:4d:d0:0a:65:28:45:f8:46:24:d5:b0:54:b5"
       - run:
-          name: initialize git
-          command: |
-            git init .
-            git config --global user.name "odan"
-            git config --global user.email "odan3240@gmail.com"
-          working_directory: ./frontend/dist
-      - run:
-          name: deploy to gh-pages
-          command: |
-            git checkout -b gh-pages
-            git add ./
-            git commit -m 'Update [ci skip]'
-            git push -f git@github.com:odanado/ethereum-message-sandbox.git gh-pages
-          working_directory: ./frontend/dist
+          name: Deploy
+          command: ./bin/deploy.sh
 
 workflows:
   build-and-deploy:
     jobs:
       - build
       - deploy:
-          requires: [build]
+          requires: [ build ]
           filters:
             branches:
               only: master
