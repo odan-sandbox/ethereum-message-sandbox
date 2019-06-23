@@ -14,8 +14,8 @@ cd $DIST_DIR
 echo $(pwd)
 
 git init .
-git config --local user.name "odan"
-git config --local user.email "odan3240@gmail.com"
+git config --local user.name ${USER}
+git config --local user.email ${EMAIL}
 
 git checkout -b ${BRANCH}
 git add ./
