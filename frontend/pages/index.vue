@@ -21,6 +21,19 @@
         </v-card-text>
       </v-card>
     </v-flex>
+    <v-flex xs12>
+      <v-card>
+        <v-card-title primary-title>
+          Quragé Link
+        </v-card-title>
+        <v-card-text>
+          <canvas ref="canvas"> </canvas>
+        </v-card-text>
+      </v-card>
+    </v-flex>
+    <v-snackbar v-model="isShowQurageLinkSuccessAlert" :timeout="3000">
+      Hello, Quragé Link
+    </v-snackbar>
   </v-layout>
 </template>
 
@@ -33,13 +46,20 @@ export default Vue.extend({
       inputMessage: '',
       message: '',
       address: '',
-      receipt: {}
+      receipt: {},
+      isShowQurageLinkSuccessAlert: false
     }
   },
   mounted(): void {
     window.ethereum.enable().then(async accounts => {
       this.address = accounts[0]
       await this.updateMessage()
+    })
+    const canvas = this.$refs.canvas as HTMLCanvasElement
+    this.$qurageLink.linkWithQRCode(canvas, true).then(result => {
+      this.address = result.address
+      this.$web3.setProvider(window.ethereum.currentProvider)
+      this.isShowQurageLinkSuccessAlert = true
     })
   },
   methods: {
