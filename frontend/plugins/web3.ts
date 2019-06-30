@@ -36,9 +36,14 @@ class LoggingWrapper {
 }
 
 export default (_: Context, inject: Inject) => {
-  const provider = new LoggingWrapper(window.web3.currentProvider)
-  const web3 = new Web3(provider)
-  inject('web3', web3)
+  const updateProvider = (provider: Provider) => {
+    const wrapedProvider = new LoggingWrapper(provider)
+    const web3 = new Web3(wrapedProvider)
+    inject('web3', web3)
+    return web3
+  }
+  const web3 = updateProvider(window.web3.currentProvider)
+  inject('updateProvider', updateProvider)
 
   const contractAddress = process.env.MESSAGE_CONTRACT_ADDRESS
   const message = new web3.eth.Contract(messageJson.abi, contractAddress)

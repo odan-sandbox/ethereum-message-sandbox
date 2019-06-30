@@ -88,7 +88,7 @@ export default Vue.extend({
       const canvas = this.$refs.canvas as HTMLCanvasElement
       this.$qurageLink.linkWithQRCode(canvas, true).then(result => {
         this.address = result.address
-        this.$web3.setProvider(window.ethereum.currentProvider)
+        this.$updateProvider(window.ethereum.currentProvider)
         this.isShowQurageLinkSuccessAlert = true
       })
     }
