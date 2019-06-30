@@ -1,7 +1,6 @@
 import Web3 from 'web3'
 import { Provider } from 'web3/providers'
 import { Context, Inject } from '@nuxt/vue-app'
-const Web3Zero = require('web3-0.x')
 
 const messageJson = require('../../ethereum/build/contracts/Message.json')
 
@@ -37,11 +36,8 @@ class LoggingWrapper {
 }
 
 export default (_: Context, inject: Inject) => {
-  const web3Zero = new Web3Zero(window.web3.currentProvider)
-
   const provider = new LoggingWrapper(window.web3.currentProvider)
   const web3 = new Web3(provider)
-  inject('web3Zero', web3Zero)
   inject('web3', web3)
 
   const contractAddress = process.env.MESSAGE_CONTRACT_ADDRESS
