@@ -7,8 +7,9 @@
     "ethereum"
   ],
   "scripts": {
-    "dev": "yarn dev:frontend",
+    "dev": "run-p dev:*",
     "dev:frontend": "yarn workspace frontend dev",
+    "dev:ethereum": "yarn workspace ethereum dev",
     "lint": "yarn lint:frontend",
     "lint:frontend": "yarn workspace frontend lint"
   },

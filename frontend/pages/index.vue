@@ -27,7 +27,12 @@
           Quragé Link
         </v-card-title>
         <v-card-text>
-          <canvas ref="canvas"> </canvas>
+          <v-flex xs12>
+            <v-btn @click="enableQurageLink">Enable Quragé Link</v-btn>
+          </v-flex>
+          <v-flex xs12>
+            <canvas ref="canvas"> </canvas>
+          </v-flex>
         </v-card-text>
       </v-card>
     </v-flex>
@@ -55,12 +60,6 @@ export default Vue.extend({
       this.address = accounts[0]
       await this.updateMessage()
     })
-    const canvas = this.$refs.canvas as HTMLCanvasElement
-    this.$qurageLink.linkWithQRCode(canvas, true).then(result => {
-      this.address = result.address
-      this.$web3.setProvider(window.ethereum.currentProvider)
-      this.isShowQurageLinkSuccessAlert = true
-    })
   },
   methods: {
     getValue(): Promise<string> {
@@ -71,7 +70,8 @@ export default Vue.extend({
       console.log(value, this.address)
       this.receipt = await this.$contracts.message.methods
         .setValue(value)
-        .send({ from: this.address })
+        // gas is tekitou
+        .send({ from: this.address, gas: 50000 })
       // eslint-disable-next-line no-console
       console.log(this.receipt)
     },
@@ -83,6 +83,14 @@ export default Vue.extend({
     async click() {
       await this.setValue(this.inputMessage)
       await this.updateMessage()
+    },
+    enableQurageLink() {
+      const canvas = this.$refs.canvas as HTMLCanvasElement
+      this.$qurageLink.linkWithQRCode(canvas, true).then(result => {
+        this.address = result.address
+        this.$web3.setProvider(window.ethereum.currentProvider)
+        this.isShowQurageLinkSuccessAlert = true
+      })
     }
   }
 })
