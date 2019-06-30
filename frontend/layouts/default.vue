@@ -42,7 +42,7 @@
       </v-btn>
     </v-toolbar>
     <v-content>
-      <v-container>
+      <v-container grid-list-lg>
         <nuxt />
       </v-container>
     </v-content>

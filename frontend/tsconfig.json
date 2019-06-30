@@ -17,6 +17,7 @@
     "noEmit": true,
     "noImplicitThis": true,
     "baseUrl": ".",
+    "skipLibCheck": true,
     "paths": {
       "~/*": [
         "./*"

@@ -55,7 +55,10 @@ const config: NuxtConfiguration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/web3', ssr: false }],
+  plugins: [
+    { src: '~/plugins/web3', ssr: false },
+    { src: '~/plugins/qurage-link', ssr: false }
+  ],
   /*
    ** Nuxt.js modules
    */
