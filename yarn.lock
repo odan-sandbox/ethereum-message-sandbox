@@ -11053,6 +11053,11 @@ vuetify@^1.5.1:
   resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.5.14.tgz#ff67d0b8a398be5297da159b6cd1b31f4d2898b8"
   integrity sha512-7iM+TfghR/wu/Gl+k37lKr0N8Ddr6SxzqHtoK1dIyHgCH6SJRkpaXPw2MC5/FsAg9aUDJbYNWrzSeu5eHw+Q/w==
 
+vuex-smart-module@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vuex-smart-module/-/vuex-smart-module-0.3.0.tgz#32b2dc6d1867f368280ea869596204e9a8bd2de2"
+  integrity sha512-DclEP9uF/qnWwSSjgU9f7+2ag37V1+RtQ80TZQrBPfIcqU+69IKU8jcLry4s3bCx00JImB66jQRm+2E3eil6bA==
+
 vuex@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.1.tgz#0c264bfe30cdbccf96ab9db3177d211828a5910e"
