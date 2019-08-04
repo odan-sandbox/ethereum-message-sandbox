@@ -62,7 +62,7 @@ const config: NuxtConfiguration = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/vuetify', '@nuxtjs/eslint-module'],
+  modules: ['@nuxtjs/vuetify', '@nuxtjs/eslint-module', '@nuxtjs/pwa'],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module

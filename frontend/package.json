@@ -13,6 +13,7 @@
     "generate:ropsten": "MESSAGE_CONTRACT_ADDRESS=0x8aD1d8051115E593b98EE2c86dA472DbAed14fF2 nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/vuetify": "0.5.5",
     "@uniqys/qurage-link-lib": "^1.1.0",
     "nuxt": "^2.0.0",
