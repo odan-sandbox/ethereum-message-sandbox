@@ -56,7 +56,8 @@ export default Vue.extend({
     }
   },
   mounted(): void {
-    window.ethereum.enable().then(async accounts => {
+    window.ethereum.enable().then(async () => {
+      const accounts = await this.$web3.eth.getAccounts()
       this.address = accounts[0]
       await this.updateMessage()
     })
